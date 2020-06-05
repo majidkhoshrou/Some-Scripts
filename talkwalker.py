@@ -62,11 +62,9 @@ a = s.split("+")
 re.sub('demographic:\w\s]+', '', a[-1])
     
     
-    
-    
-    
-url = 'https://api.talkwalker.com/api/v2/talkwalker/p/9f7ec52e-d136-411e-9357-8237608201c2/resources?access_token=d11e703e-0cd4-489d-b07b-0833ff6d2560_cg2phCvSlsilq-ZXFANPNhWBdtngASp6BPjBLwuSFqnJVghqNBf-Hh2pgrCbOTTJuORPX57BZVjZ-Ej8Ps6u3ILe9pP8XUN7k07B5kAWRhx9oY93VUHPqkV2QwhEUQHuLvQUuw0oNrdQ1a9CmZ33zz3AcV4XrRoK2vzMzmPgFZs'
 
+    
+url  = '****'
 response = requests.request("GET", url)
 json_data = json.loads(response.text)
 json_data
@@ -110,7 +108,6 @@ results_dict['topics']
     
 x  = list(filter(len, results))
 
-[[]l for l in x]
 
 
 [list(compress(a[0]['filters'][i]['nodes'],[d['title'] == 'Bakeri' for d in a[0]['filters'][i]['nodes']])) for i in range(len(a[0]['filters']))]
@@ -197,21 +194,7 @@ f = str(2)
  str('2')   
     
     
-    
-import requests
 
-url = "http://mbvapi-dev.maistering.com/notification/api/Notification/Notification"
-
-payload = "{\r\n        \"NotificationType\": 1,\r\n        \"publisherId\": 7,\r\n        \"Title\": \"coinbase sucks!\",\r\n        \"Body\": \"Mohita Shrivastava added you to  Ideation - Q2 2020 Planning\",\r\n        \"Priority\": 1,\r\n        \"MessageTargets\": [\r\n            {\r\n                \"TargetSource\": 1,\r\n                \"UserInfo\": [\r\n                    {\r\n                        \"UserName\": \"Muralidaran Sankaralingam\",\r\n                        \"Email\": \"muralidaran.sankaralingam@m365x119746.onmicrosoft.com\",\r\n                        \"isRead\": false\r\n                    }\r\n                ]               \r\n            }\r\n        ],\r\n        \"IconUrl\": \"https://devmccdnblobs.blob.core.windows.net/journey/Journey_icon-01.svg\",\r\n        \"ImageUrl\": \"https://mbvmaisteringdataadls.blob.core.windows.net/dynamicimages/Finance87.jpg\",\r\n        \"BadgeUrl\": null,\r\n        \"Action\": [\r\n            {\r\n                \"Title\": \"Join Ideation\",\r\n                \"Action\": 2,\r\n                \"ActionIcon\": \"https://devmccdnblobs.blob.core.windows.net/journey/Journey_icon-01.svg\",\r\n                \"ActionData\": {\r\n                     \"journeyId\": \"b3a569e7-64db-424b-b678-5ae255728d84\",\r\n                     \"journeyName\": \"Aaa_Test\"\r\n                }\r\n            },\r\n            {\r\n                \"Title\": \"Send Idea\",\r\n                \"Action\": 2,\r\n                \"ActionIcon\": \"https://devmccdnblobs.blob.core.windows.net/journey/Journey_icon-01.svg\",\r\n                \"ActionData\": {\r\n                     \"journeyId\": \"b3a569e7-64db-424b-b678-5ae255728d84\",\r\n                     \"journeyName\": \"Aaa_Test\"\r\n                }\r\n            }],\r\n        \"Data\": null,\r\n        \"created_by\": \"mohita.shrivastava@m365x691793.onmicrosoft.com\"\r\n    }"
-headers = {
-  'Content-Type': 'application/json'
-}
-
-response = requests.request("POST", url, headers=headers, data = payload)
-
-print(response.text.encode('utf8'))
-
-    
     
     
     
