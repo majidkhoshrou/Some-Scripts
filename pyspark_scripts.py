@@ -6,6 +6,28 @@ Created on Sat Jun  6 10:14:48 2020
 @author: MajidKhoshrou
 """
 
+from pyspark.sql.window import Window
+import datetime
+import re
+import numpy
+numpy.seterr(divide='ignore', invalid='ignore')
+import logging
+from functools import reduce
+from operator import getitem
+
+from scipy import stats
+from scipy.stats import zscore
+import requests
+import json
+import uuid
+
+import pyspark.sql.types as T
+import pyspark.sql.functions as F
+
+from itertools import compress
+
+# [{k:v} for k,v in config.items()]
+
 
 # read a table from db
 df_all = spark.read.format("jdbc").option("url", insights_config['url']).option("dbtable", "talkwalker_emotion_metrics").option("user", insights_config['user'])\
